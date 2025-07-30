@@ -19,9 +19,18 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Jeebhar
-            </h1>
+            <button
+              onClick={() => scrollToSection('home')}
+              className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300"
+              aria-label="Jeebhar Home"
+            >
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-orange-400 flex items-center justify-center">
+                <div className="text-white text-sm font-bold">J</div>
+              </div>
+              <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                Jeebhar
+              </span>
+            </button>
           </div>
 
           {/* Desktop Navigation */}

@@ -16,17 +16,65 @@ const Footer = () => {
               creative content, and data-driven campaigns that deliver real results.
             </p>
             <div className="flex gap-4">
-              <Button variant="outline" size="icon" className="hover:bg-primary hover:border-primary">
-                <Facebook className="w-5 h-5" />
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="hover:bg-primary hover:border-primary"
+                asChild
+              >
+                <a 
+                  href="https://facebook.com/jeebhar" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="hover:bg-primary hover:border-primary">
-                <Instagram className="w-5 h-5" />
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="hover:bg-primary hover:border-primary"
+                asChild
+              >
+                <a 
+                  href="https://instagram.com/jeebhar" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="hover:bg-primary hover:border-primary">
-                <Youtube className="w-5 h-5" />
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="hover:bg-primary hover:border-primary"
+                asChild
+              >
+                <a 
+                  href="https://youtube.com/@jeebhar" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Subscribe to our YouTube channel"
+                >
+                  <Youtube className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="hover:bg-primary hover:border-primary">
-                <Music className="w-5 h-5" />
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="hover:bg-primary hover:border-primary"
+                asChild
+              >
+                <a 
+                  href="https://tiktok.com/@jeebhar" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on TikTok"
+                >
+                  <Music className="w-5 h-5" />
+                </a>
               </Button>
             </div>
           </div>
