@@ -67,6 +67,8 @@ const Experience = () => {
   ];
 
   const stats = [
+    { label: "Total Followers", value: "500K+", icon: Users },
+    { label: "Monthly Interactions", value: "2M+", icon: Award },
     { label: "Years of Experience", value: "10+", icon: Calendar },
     { label: "Successful Projects", value: "500+", icon: Award },
     { label: "Happy Clients", value: "200+", icon: Users },
@@ -88,7 +90,7 @@ const Experience = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
           {stats.map((stat, index) => (
             <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-0">

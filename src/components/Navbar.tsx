@@ -66,6 +66,12 @@ const Navbar = () => {
               >
                 Our Reels
               </button>
+              <button
+                onClick={() => window.open('/media-kit.pdf', '_blank')}
+                className="text-foreground hover:text-primary transition-colors duration-300"
+              >
+                Media Kit
+              </button>
               <Button
                 variant="gradient"
                 onClick={() => scrollToSection('contact')}
@@ -121,6 +127,12 @@ const Navbar = () => {
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors duration-300"
             >
               Our Reels
+            </button>
+            <button
+              onClick={() => window.open('/media-kit.pdf', '_blank')}
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors duration-300"
+            >
+              Media Kit
             </button>
             <div className="px-3 py-2">
               <Button
