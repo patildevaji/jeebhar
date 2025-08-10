@@ -29,10 +29,18 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
-      // In a real app, you would send this to your backend
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch(`https://gmdkbpylziflwtvuqxjr.supabase.co/functions/v1/send-contact-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
       
       toast({
         title: "Message Sent Successfully!",

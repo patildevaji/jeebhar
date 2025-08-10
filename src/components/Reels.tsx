@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronLeft, ChevronRight, Play, Eye } from "lucide-react";
+import VideoModal from "./VideoModal";
 
 const reelsData = {
   travel: [
@@ -10,6 +11,7 @@ const reelsData = {
       id: 1,
       title: "Bavarian Alps Adventure",
       thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/76979871?autoplay=1&muted=1",
       views: "1.2M",
       description: "Breathtaking mountain views and hiking trails",
       duration: "1:45"
@@ -18,6 +20,7 @@ const reelsData = {
       id: 2,
       title: "Berlin Street Art Tour",
       thumbnail: "https://images.unsplash.com/photo-1587330979470-3862917134ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/115041822?autoplay=1&muted=1",
       views: "890K",
       description: "Underground culture and artistic expression",
       duration: "2:10"
@@ -26,6 +29,7 @@ const reelsData = {
       id: 3,
       title: "Rhine Valley Castles",
       thumbnail: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/87110435?autoplay=1&muted=1",
       views: "2.1M",
       description: "Medieval castles along the romantic Rhine",
       duration: "1:30"
@@ -34,6 +38,7 @@ const reelsData = {
       id: 4,
       title: "Oktoberfest Experience",
       thumbnail: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/158284739?autoplay=1&muted=1",
       views: "3.5M",
       description: "Traditional Bavarian festival celebration",
       duration: "2:45"
@@ -44,6 +49,7 @@ const reelsData = {
       id: 5,
       title: "Viral Pizza Making",
       thumbnail: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "2.3M",
       description: "Behind-the-scenes pizza making that went viral",
       duration: "0:45"
@@ -52,6 +58,7 @@ const reelsData = {
       id: 6,
       title: "Sushi Master Class",
       thumbnail: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "1.8M",
       description: "Mesmerizing sushi preparation techniques",
       duration: "1:20"
@@ -60,6 +67,7 @@ const reelsData = {
       id: 7,
       title: "German Bakery Secrets",
       thumbnail: "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "1.1M",
       description: "Traditional German bread making process",
       duration: "2:15"
@@ -68,6 +76,7 @@ const reelsData = {
       id: 8,
       title: "Fine Dining Plating",
       thumbnail: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "950K",
       description: "Artistic fine dining presentation",
       duration: "1:05"
@@ -78,6 +87,7 @@ const reelsData = {
       id: 9,
       title: "Luxury Hotel Suite Tour",
       thumbnail: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "1.7M",
       description: "Exclusive look at premium hospitality",
       duration: "2:30"
@@ -86,6 +96,7 @@ const reelsData = {
       id: 10,
       title: "Spa Day Experience",
       thumbnail: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "1.3M",
       description: "Relaxing wellness and spa treatments",
       duration: "1:50"
@@ -94,6 +105,7 @@ const reelsData = {
       id: 11,
       title: "Resort Activities Showcase",
       thumbnail: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "2.2M",
       description: "Fun activities and resort amenities",
       duration: "3:00"
@@ -102,6 +114,7 @@ const reelsData = {
       id: 12,
       title: "Concierge Services",
       thumbnail: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "780K",
       description: "Premium guest service experience",
       duration: "1:25"
@@ -112,6 +125,7 @@ const reelsData = {
       id: 13,
       title: "Berlin Daily Life",
       thumbnail: "https://images.unsplash.com/photo-1559564484-ba0292f8d8b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "1.5M",
       description: "Authentic daily experiences in Berlin",
       duration: "2:20"
@@ -120,6 +134,7 @@ const reelsData = {
       id: 14,
       title: "German Work Culture",
       thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "920K",
       description: "Professional life and business etiquette",
       duration: "1:40"
@@ -128,6 +143,7 @@ const reelsData = {
       id: 15,
       title: "Christmas Markets",
       thumbnail: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "2.8M",
       description: "Traditional German Christmas celebrations",
       duration: "2:55"
@@ -136,6 +152,7 @@ const reelsData = {
       id: 16,
       title: "Public Transport Guide",
       thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      videoUrl: "https://player.vimeo.com/video/179528528?autoplay=1&muted=1",
       views: "1.1M",
       description: "Navigating German public transportation",
       duration: "1:15"
@@ -150,6 +167,7 @@ const Reels = () => {
     hospitality: 0,
     germany: 0
   });
+  const [selectedVideo, setSelectedVideo] = useState<{url: string, title: string} | null>(null);
   
   const itemsPerView = 3;
 
@@ -216,7 +234,10 @@ const Reels = () => {
                 key={reel.id} 
                 className="flex-shrink-0 w-full md:w-1/3"
               >
-                <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer">
+                <Card 
+                  className="group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
+                  onClick={() => setSelectedVideo({url: reel.videoUrl || '', title: reel.title})}
+                >
                   <div className="relative aspect-[9/16] overflow-hidden">
                     <img
                       src={reel.thumbnail}
@@ -322,6 +343,13 @@ const Reels = () => {
             <ReelGrid category="germany" />
           </TabsContent>
         </Tabs>
+
+        <VideoModal
+          isOpen={!!selectedVideo}
+          onClose={() => setSelectedVideo(null)}
+          videoUrl={selectedVideo?.url || ''}
+          title={selectedVideo?.title || ''}
+        />
       </div>
     </section>
   );
